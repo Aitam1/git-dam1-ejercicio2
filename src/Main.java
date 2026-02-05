@@ -5,19 +5,24 @@ public class Main {
     static Scanner numeros = new Scanner(System.in);
 
     public static void main(String[] args) {
-        LinkedList<Integer> edades = new LinkedList<>();
-        // Pedir al usuario que introduzca 5 edades (enteros) y mostrar las edades
-        //introducidas por pantalla.
-        int edad;
+
+        // Calcular y mostrar la edad mínima y la edad máxima
+
+        int edad,
+        edadMax = -1,
+        edadMin = 9999;
         System.out.println("---- Hay que introducir 5 edades ----");
         for(int i = 1; i <= 5; i++) {
             System.out.print("Edad " + i + " : ");
             edad = numeros.nextInt();
-            edades.add(edad);
+            if(edad > edadMax)
+                edadMax = edad;
+            if(edad < edadMin)
+                edadMin = edad;
         }
 
-        System.out.print("Las edades introducidos : ");
-        for(int i = 0; i < edades.size(); i++)
-            System.out.print(edades.get(i) + " ");
+        System.out.println("La edad maxima es : " + edadMax);
+        System.out.println("La edad minima es : " + edadMin);
+
     }
 }
