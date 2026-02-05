@@ -6,23 +6,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Calcular y mostrar la edad mínima y la edad máxima
+        // Contar y mostrar cuántos mayores de edad y cuántos menores de edad.
 
         int edad,
-        edadMax = -1,
-        edadMin = 9999;
+        mayoresDeEdad = 0,
+        menorDeEdad = 0;
         System.out.println("---- Hay que introducir 5 edades ----");
         for(int i = 1; i <= 5; i++) {
             System.out.print("Edad " + i + " : ");
             edad = numeros.nextInt();
-            if(edad > edadMax)
-                edadMax = edad;
-            if(edad < edadMin)
-                edadMin = edad;
+            if(edad >= 18)
+                mayoresDeEdad++;
+            else
+                menorDeEdad++;
         }
 
-        System.out.println("La edad maxima es : " + edadMax);
-        System.out.println("La edad minima es : " + edadMin);
+        System.out.println("Mayor de edad : " + mayoresDeEdad);
+        System.out.println("Menor de edad : " + menorDeEdad);
 
     }
 }
