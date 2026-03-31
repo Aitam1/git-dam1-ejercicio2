@@ -46,5 +46,16 @@ public class Main {
         System.out.println("Rango 18-30 : " + rango2);
         System.out.println("Rango 31-50 : " + rango3);
         System.out.println("Rango +51 : " + rango4);
+
+
+        // Version 5: Indicar si todas las personas son mayores de edad
+        boolean todasMayores = true;
+        for (int e : edades) {
+            if (e < 18) {
+                todasMayores = false;
+                break;
+            }
+        }
+        System.out.println("Todas mayores de edad : " + todasMayores);
     }
 }
