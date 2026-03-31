@@ -1,21 +1,27 @@
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
+
 public class Main {
 
     static Scanner numeros = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        // Contar y mostrar cuántos mayores de edad y cuántos menores de edad.
-
         int edad,
-        mayoresDeEdad = 0,
-        menorDeEdad = 0;
+                mayoresDeEdad = 0,
+                menorDeEdad = 0,
+                suma = 0;
+
+        LinkedList<Integer> edades = new LinkedList<>();
+
         System.out.println("---- Hay que introducir 5 edades ----");
-        for(int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 5; i++) {
             System.out.print("Edad " + i + " : ");
             edad = numeros.nextInt();
-            if(edad >= 18)
+            edades.add(edad);
+            suma += edad;
+            if (edad >= 18)
                 mayoresDeEdad++;
             else
                 menorDeEdad++;
@@ -24,5 +30,8 @@ public class Main {
         System.out.println("Mayor de edad : " + mayoresDeEdad);
         System.out.println("Menor de edad : " + menorDeEdad);
 
+        // Version 4: Media de edad
+        double media = (double) suma / edades.size();
+        System.out.println("Media de edad : " + media);
     }
 }
