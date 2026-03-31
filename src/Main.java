@@ -33,5 +33,9 @@ public class Main {
         // Version 4: Media de edad
         double media = (double) suma / edades.size();
         System.out.println("Media de edad : " + media);
+
+        // Version 5: Edades ordenadas de menor a mayor
+        Collections.sort(edades);
+        System.out.println("Edades ordenadas : " + edades);
     }
 }
